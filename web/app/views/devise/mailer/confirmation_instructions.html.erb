@@ -1,0 +1,5 @@
+<p>Welcome to Partake, <%= @resource.first_name %>!</p>
+
+<p>You can confirm your account email by clicking the link below:</p>
+
+<p><%= link_to 'Confirm my Partake account', confirmation_url(@resource, :confirmation_token => @token) %></p>

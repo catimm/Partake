@@ -1,0 +1,403 @@
+body, html {
+	height: 100%;
+	width: 100%;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 700;
+}
+.welcome {
+  margin: 0;
+  padding: 17px 15px 15px 15px;
+  height: 35px;
+}
+.lead {
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.intro-header {
+	padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+	padding-bottom: 50px;
+	color: #f8f8f8;
+	background: url(/assets/intro-2.jpg) no-repeat center center;
+	background-size: cover;
+	text-align: center;
+}
+
+.intro-message {
+	position: relative;
+	padding-top: 20%;
+	padding-bottom: 20%;
+}
+
+.intro-message > h1 {
+	margin: 0;
+	font-size: 5em;
+	text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.intro-divider {
+	width: 400px;
+	border-top: 1px solid #f8f8f8;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.intro-message > h3 {
+	text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 767px) {
+	.intro-message {
+		padding-bottom: 15%;
+	}
+
+	.intro-message > h1 {
+		font-size: 3em;
+	}
+
+	ul.intro-social-buttons > li {
+		display: block;
+		margin-bottom: 20px;
+		padding: 0;
+	}
+
+	ul.intro-social-buttons > li:last-child {
+		margin-bottom: 0;
+	}
+
+	.intro-divider {
+		width: 100%;
+	}
+}
+
+.network-name {
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 400;
+	letter-spacing: 2px;
+}
+
+.content-section-a {
+	background-color: #f8f8f8;
+	padding: 50px 0;
+}
+
+.content-section-b {
+	border-top: 1px solid #e7e7e7;
+	border-bottom: 1px solid #e7e7e7;
+	padding: 50px 0;
+}
+
+.section-heading {
+	margin-bottom: 30px;
+}
+
+.section-heading-spacer {
+	border-top: 3px solid #e7e7e7;
+	width: 200px;
+	float: left;
+}
+
+.banner {
+	padding: 100px 0;
+	color: #f8f8f8;
+	background: url(/assets/seattle.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.banner h2 {
+	margin: 0;
+	text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+	font-size: 3em;
+}
+
+.banner ul {
+	margin-bottom: 0;
+}
+
+.banner-social-buttons {
+	float: right;
+	margin-top: 0;
+}
+
+@media (max-width: 1199px) {
+	ul.banner-social-buttons {
+		float: left;
+		margin-top: 15px;
+	}	
+}
+
+@media (max-width: 767px) {
+	.banner h2 {
+		margin: 0;
+		text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+		font-size: 3em;
+	}
+
+	ul.banner-social-buttons > li {
+		display: block;
+		margin-bottom: 20px;
+		padding: 0;
+	}
+
+	ul.banner-social-buttons > li:last-child {
+		margin-bottom: 0;
+	}	
+}
+
+footer {
+	background-color: #ffffff;
+	padding: 50px 0;
+}
+
+p.copyright {
+	margin: 15px 0 0;
+}
+
+
+/* Elements for the package options page */
+.mainBody {
+  padding-top: 55px;
+}
+.packageOverview {
+  max-width: 940px;
+  height: auto !important;
+  background: #FFFFFF; 
+  margin: 15px auto;
+  -webkit-box-shadow: 0 1px 10px 1px rgba(51,51,51,0.6);
+  -moz-box-shadow: 0 1px 10px 1px rgba(51,51,51,0.6);
+  box-shadow: 0 1px 10px 1px rgba(51,51,51,0.6);
+  -webkit-border-radius: 2.5px;
+  -moz-border-radius: 2.5px;
+  border-radius: 2.5px;
+}
+.col-sm-4 {
+  padding: 0;
+}
+.packageLeft {
+  position: relative;
+  overflow: hidden;
+  -webkit-border-top-left-radius: 2.5px;
+  -webkit-border-bottom-left-radius: 2.5px;
+  -moz-border-radius-topleft: 2.5px;
+  -moz-border-radius-bottomleft: 2.5px;
+  border-top-left-radius: 2.5px;
+  border-bottom-left-radius: 2.5px;
+  height: 200px;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat no-repeat;
+}
+  .packageImage {
+    margin: 0;
+  }
+  .packageCost {
+    background: rgba(246,168,40,0.9);
+    width: 75px;
+    height: 45px;
+    padding: 2.5px;
+    -webkit-border-radius: 2.5px;
+    -moz-border-radius: 2.5px;
+    border-radius: 2.5px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1000;
+    padding-top: 5px;
+  }
+  .packagePrice {
+      color: #FFFFFF;
+      text-shadow: 2px 2px 10px #000000;
+      text-align: center;
+      margin: 0;
+    }
+
+  
+  .packageCategory {
+    color: #FFFFFF;
+    font-size: 150%;
+    font-weight: 400;
+    text-shadow: 2px 2px 10px #000000;
+    position: absolute;
+    left: 7.5px;
+    bottom: 5px;
+  }
+
+
+
+.venueText {
+  font-weight: 400;
+}
+.packageRight {
+  height: 180px;
+  position: relative;
+}
+.venueInformation {
+  margin-top: 10px;
+  width: 100%;
+  height: 40px;
+  float: left;
+  position: relative;
+}
+.venueTitle {
+  margin: 0 10px 0 0;
+  float: left;
+}
+.venueWebsite {
+  color: #333333 !important;
+  margin-top: 15px;
+  font-size: 80%;
+  display: block;
+}
+.venueDets {
+  margin: -7.5px 0 0 2.5px;
+  width: 100%;
+  height: 20px;
+  float: left;
+}
+.venueCat {
+  float: left;
+  font-size: 90%;
+  margin-right: 5px;
+}
+.venueLoc {
+  font-size: 90%;
+}
+.packageDets {
+  margin-top: 5px;
+  width: 97.5%;
+  height: 110px;
+  float: left;
+}
+.packageTitle {
+  font-size: 125%;
+  line-height: 1.5;
+}
+.packageDescription {
+  font-size: 112.5%;
+  line-height: 1.2;
+}
+.finePrint {
+  border-left: 1px solid #CCCCCC;
+  margin: 0 auto;
+  height: 150px;
+  padding: 17.5px 0 0 10px;
+  width: 100%;
+  h5 {
+    font-weight: 400;
+    font-size: 85%;
+    line-height: 1.25;
+    span {
+      font-weight: 600;
+    }
+  }
+}
+.asterikInfo {
+  margin-top: 17.5px;
+  line-height: 1.2;
+}
+.responseOptions {
+  max-width: 940px;
+  margin: 0 auto;
+  padding-bottom: 75px;
+}
+.responseButtons {
+  float: left;
+  width: 100%;
+  font-size: 150%;
+}
+
+/* Elements for the registrations page */
+#registerContainer {
+	width: 33.3%;
+}
+input {
+	width: 280px;
+	padding: 5px;
+	margin-bottom: 7.5px;
+	font-size: 120%;
+}
+#error_explanation h2 {
+	font-size: 100%;
+	color: red;
+}
+#error_explanation ul {
+	padding: 0;
+}
+#error_explanation li {
+	list-style: none;
+	color: red;
+}
+#flash_alert {
+	margin-bottom: 7.5px;
+	color: red;
+}
+#user_remember_me {
+	width: 20px;
+}
+#extraQs {
+	width: 280px;
+	font-size: 90%;
+	font-weight: 400;
+}
+
+/* Elements for alternative footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  width: 100%;
+  margin: 55px auto -45px;
+  padding: 0 0 100px;
+}
+.altfooter {
+  height: 45px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 0 60px 0;
+}
+
+/* Elements for thanks page */
+.inviteOthers {
+	margin: 30px auto 90px auto;
+	width: 90%;
+}
+.panel {
+	padding: 0;
+}
+.emailOptions {
+	float: left;
+	width: 33.33%;
+	margin: 7.5px 0;
+}
+.orConnector {
+	margin-top: 32.5px;
+}
+.icon-large {
+	font-size: 150%;
+	float: left;
+	margin-right: 10px;
+}
+.emailIcon {
+	font-size: 225%;
+	margin-top: -12.5px;
+}
+.fbIcon {
+	font-size: 125%;
+}
+
+/* Elements for invite page */
+.inviteBody {
+	width: 60%;
+	margin: 0 auto;
+}
+.inviteBody div {
+	margin-bottom: 5px;
+}
+.inviteButton {
+	width: 100%;
+}

@@ -1,0 +1,58 @@
+<div class="event-show">
+  <div class="container">
+    <div class="header row">
+      <div class="title col-xs-12 col-md-3">
+        <span><%= @event.organizer.first_name %>'s Invite</span>
+      </div>
+    </div>
+    <% @time_options.each do |time_option| %>
+      <div class="time row">
+        <div class="time-option col-xs-8 col-md-2">
+          <span>
+            <%= time_option.time.in_time_zone("Pacific Time (US & Canada)").strftime("%a, %b %d @ %I:%M %p") %>
+          </span>
+        </div>
+        <div class="time-upvotes col-xs-4 col-md-8">
+          <span class="time-upvote">+<%= time_option.upvotes %></span>
+        </div>
+      </div>
+    <% end %>
+    <% @package_options.each do |package_option| %>
+      <div class="package row" style="background-image: url(<%= package_option.package_instance.package.image_url %>);">
+        <div class="package-upvotes row">
+          <div class="col-xs-6 col-md-6">
+            <span class="package-upvote">+<%= package_option.upvotes %></span>
+          </div>
+        </div>
+        <div class="venue-name row">
+          <div class="col-xs-8 col-md-6">
+            <span><%= package_option.package_instance.package.venue.name %></span>
+          </div>
+        </div>
+        <div class="price-location row">
+          <div class="col-xs-7 col-md-2">
+            <span>$<%= '%.2f' % (package_option.package_instance.price/100.00) %> <%= package_option.package_instance.package.package_type %></span>
+          </div>
+          <div class="location col-xs-2 col-md-2">
+            <span><%= package_option.package_instance.package.venue.city %></span>
+          </div>
+        </div>
+        <div class="description row">
+          <div class="col-xs-10 col-md-3">
+            <p><%= package_option.package_instance.package.description %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <%= form_tag do %>
+      <div class="row submit-buttons">
+        <div class="col-xs-6 col-md-1">
+          <%= submit_tag 'Decline', class: "btn btn-danger btn-lg"%>
+        </div>
+        <div class="col-xs-4 col-md-1">
+          <%= submit_tag 'Accept', :name => 'accept', class: "btn btn-success btn-lg" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

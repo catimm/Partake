@@ -1,0 +1,66 @@
+
+<div class="wrapper">
+	<%= render 'layouts/header' %> 
+	<div class="row-fluid carousel-responsive">
+    	<div class="span12 carousel-position">
+    		<div class="carousel slide no-margin">
+    			<div class="carousel-inner">
+    				<div class="item carousel-item tint" style="background-image: url(<%= image_tag("seattle.jpg", :class => "img-responsive container-fluid", :alt => "Responsive image") %>);">
+
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+	<div class="section heroBox">
+		
+		
+		<div id="container taglineTextBox">
+			<h1>Partake</h1>
+			<h2 class="taglineText" id="tagline">The best way for friends to go out.</h2>
+			<%= render 'layouts/request' %>
+			<script> $('input[placeholder]').placeholder();</script>
+		<% flash.each do |name, msg| -%>
+		     <%= content_tag :div, msg, class: name %>
+		<% end -%>
+		</div>
+		
+	</div>
+	<div class="valueProp">
+		<div class="featureSet">
+			<div class="overview">
+				<h2>Partake is the best way for friends to grab dinner or drinks.</h2>
+				<h4>It combines event planning, exclusive venue options and bill pay into one easy-to-use, free mobile application.</h4>
+			</div>
+			<div class="featureRow">
+				<div class="feature">
+					<h3 class="featureIcon icon-calendar"></h3>
+					<h3 class="featureTitle">Simplify planning</h3>
+					<h4 class="featureText">Quickly gather input and preferences from friends while reducing the back-and-forth over email, text or phone.</h4>
+				</div>
+				<div class="feature">
+					<h3 class="featureIcon icon-heart"></h3>
+					<h3 class="featureTitle">Enjoy the experience</h3>
+					<h4 class="featureText">With a wide range of exclusive options from amazing venues, you can find something that everyone in your party will enjoy.</h4>
+				</div>
+				<div class="feature thirdFeature">
+					<h3 class="featureIcon icon-credit"></h3>
+					<h3 class="featureTitle">Reduce bill hassles</h3>
+					<h4 class="featureText">No more waiting for the bill or trying to split it evenly. Just leave when you’re done and easily pay through your phone.</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<div id="footerText">
+			<h5 class="footerText">Partake &copy; 2013</h5>
+			<a href="privacy.html"><h5 class="footerText">Privacy</h5></a>
+			<a href="terms.html"><h5 class="footerText">Terms</h5></a>
+			<a href="mailto:support@wepartake.com"><h5 class="footerText">Contact</h5></a>
+			<a href="https://twitter.com/WePartake" target=”_blank”><h5 class="footerText footerIcons icon-twitter"></h5></a>
+			<a href="https://www.facebook.com/wepartake" target=”_blank”><h5 class="footerText footerIcons icon-facebook"></h5></a>
+		</div>
+	</div>
+</div>
+
+

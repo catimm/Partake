@@ -1,0 +1,46 @@
+
+		<div class="row packageOverview">
+			<div class="col-sm-4">
+				<div class="packageLeft" style="background-image: url(<%= @packages.package.image_url %>)">
+					<div class="packageCost">
+						<h4 class="packagePrice">$<%= @packages.price %></h4>
+						<h6 class="packagePrice">per person</h6>
+					</div>
+					<h3 class="packageCategory"><%= @packages.package.package_type %></h3>
+				</div>
+			</div>
+			<div class="col-sm-8">
+				<div class="packageRight">
+					<div class="venueInformation">
+						<h2 class="venueTitle venueText"><%= @packages.package.venue.name %></h2>
+						<%= link_to "website", @packages.package.venue.website, { :class => "venueWebsite venueText", :target => "_blank" } %>
+					</div>
+					<div class="venueDets">
+						<h4 class="venueCat venueText"><%= @packages.package.venue.cuisine %> - </h4>
+						<h4 class="venueLoc venueText"><%= @packages.package.venue.neighborhood %></h4>
+					</div>
+					<div class="packageDets">
+						<h3 class="packageTitle venueText"><%= @packages.package.title %></h3>
+						<h4 class="packageDescription venueText"><%= @packages.package.description %></h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row responseOptions">
+			<div class="col-xs-6">
+			<%= form_for @response, url: {action: "update"} do |f| %>
+			  <%= f.hidden_field :user_id, value: params[:id] %>
+			  <%= f.hidden_field :package_instance_id, value: @packages.package_id %>
+			  <%= f.hidden_field :response, value: false %>
+			  <%= f.submit value: "Nah, skip", class: "btn btn-danger responseButtons" %>
+			<% end %>
+			</div>
+			<div class="col-xs-6">
+			<%= form_for @response, url: {action: "update"} do |f| %>
+			   <%= f.hidden_field :user_id, value: params[:id] %>
+			  <%= f.hidden_field :package_instance_id, value: @packages.package_id %>
+			  <%= f.hidden_field :response, value: true %>
+			  <%= f.submit "Yes", class: "btn btn-success responseButtons" %>
+			<% end %>
+			</div>
+		</div>	

@@ -1,0 +1,41 @@
+<div id="section wrap">
+	<%= render 'layouts/header' %> 
+	<div class="container mainBody">
+		<div class="row">
+			<div class="page-header">
+			  <h2>Thanks for your input. We'll let you know by Tue evening if you have preferences in common with any of your friends.</h2>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<h3>Connect with your friends to find more preferences in common:</h2>
+			</div>
+			<div class="row inviteOthers">
+				<div class="panel panel-default col-sm-12 col-md-5">
+				  <div class="panel-heading container">
+				    <i class="icon-large glyphicon glyphicon-envelope emailIcon"></i>
+					<h4 class="panel-title">Invite Via Email</h4>
+				  </div>
+				  <div class="panel-body">
+				    <h5 class="emailOptions text-center"> <%= link_to image_tag("google.png", :border=>0, :class => 'mail'), "/contacts/gmail" %></h5>
+					<h5 class="emailOptions text-center"> <%= link_to image_tag("windows.png", :border=>0, :class => 'mail'), "/contacts/hotmail" %></h5>
+					<h5 class="emailOptions text-center"> <%= link_to image_tag("yahoo.png", :border=>0, :class => 'mail'), "/contacts/yahoo" %></h5>
+				  </div>
+				</div>
+				<div class="col-sm-12 col-md-2 fbHide orConnector">
+					<h5 class="text-center">- or -</h5>
+				</div>
+				<div class="panel panel-default col-sm-12 col-md-5 fbHide">
+				  <div class="panel-heading container">
+				  	<i class="icon-large icon-facebook fbIcon"></i>
+				  	<h4 class="panel-title">Find Facebook friends on Partake</h4>
+				  </div>
+				  <div class="panel-body text-center">
+				  	<%= link_to image_tag("facebook.png", :border => 0, id:"facebookImage"), user_omniauth_authorize_path(:facebook) %>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<%= render 'layouts/footer' %>

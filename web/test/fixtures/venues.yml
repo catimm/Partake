@@ -1,0 +1,68 @@
+# == Schema Information
+#
+# Table name: venues
+#
+#  id                 :integer          not null, primary key
+#  name               :string(255)
+#  cuisine            :string(255)
+#  phone              :integer
+#  website            :string(255)
+#  facebook           :string(255)
+#  street             :string(255)
+#  city               :string(255)
+#  state              :string(255)
+#  zip                :integer
+#  hours1             :string(255)
+#  hours2             :string(255)
+#  hours3             :string(255)
+#  hours4             :string(255)
+#  contact_first_name :string(255)
+#  contact_last_name  :string(255)
+#  contact_role       :string(255)
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  contact_email      :string(255)
+#  contact_phone      :integer
+#  neighborhood       :string(255)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+altura:
+  id: 1
+  name: Altura
+  cuisine: Italian
+  phone: 2064026749
+  website: alturarestaurant.com
+  street: 617 Broadway E
+  city: Seattle
+  neighborhood: Capitol Hill
+  state: WA
+  zip: 98102
+  hours1: Tue-Thu 5:30pm - 10pm
+  hours2: Fri-Sat 5pm - 10pm
+  contact_first_name: Michael
+  contact_last_name: Corleone
+  contact_role: owner
+  created_at: <%= DateTime.now.utc %>
+  updated_at: <%= DateTime.now.utc %>
+
+taylor:
+  id: 2
+  name: Taylor Shellfish Farms
+  cuisine: seafood
+  phone: 2065014321
+  website: taylormelrose.com
+  street: 1521 Melrose Ave
+  city: Seattle
+  neighborhood: Capitol Hill
+  state: WA
+  zip: 98122
+  hours1: Mon-Thu 10am - 9pm
+  hours2: Sun 10am - 9pm
+  hours3: Fri-Sat 10am - 11pm
+  contact_first_name: Taylor
+  contact_last_name: Jones
+  contact_role: manager
+  created_at: <%= DateTime.now.utc %>
+  updated_at: <%= DateTime.now.utc %>

@@ -1,0 +1,53 @@
+# == Schema Information
+#
+# Table name: event_package_options
+#
+#  id                  :integer          not null, primary key
+#  event_id            :integer
+#  package_instance_id :integer
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#
+# Indexes
+#
+#  index_event_package_options_on_event_id             (event_id)
+#  index_event_package_options_on_package_instance_id  (package_instance_id)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  event_id: 1
+  package_instance_id: 1
+
+two:
+  id: 2
+  event_id: 1
+  package_instance_id: 2
+
+three:
+  id: 3
+  event_id: 1
+  package_instance_id: 4
+
+four:
+  id: 4
+  event_id: 2
+  package_instance_id: 2
+
+five:
+  id: 5
+  event_id: 2
+  package_instance_id: 3
+
+six:
+  id: 6
+  event_id: 3
+  package_instance_id: 1
+
+seven:
+  id: 7
+  event_id: 3
+  package_instance_id: 3
+

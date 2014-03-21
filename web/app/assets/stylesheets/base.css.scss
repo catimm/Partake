@@ -1,0 +1,39 @@
+@mixin drop-shadow($distance, $size, $color) {
+  -moz-box-shadow: 0px $distance $size 0px $color;
+  -webkit-box-shadow: 0px $distance $size 0px $color; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  box-shadow: 0px $distance $size 0px $color; /* Opera 10.5, IE9+, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+@mixin background-panel($image) {
+  width: 100%;
+  background-image: image-url($image);
+  background-size: cover;
+}
+
+@mixin process-details {
+  margin-top: 70px;
+  h1 {
+    font-weight: 500;
+    font-size: 40px;
+    text-align: center;
+    color: #000;
+  } 
+}
+
+@mixin process-image($image) {
+  @include background-panel($image);
+  height: 600px;
+  min-width: 1200px;
+  margin-top: 70px; 
+}
+
+@mixin upvote {
+  color: white;
+  background: green;
+  font-weight: bold;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  padding: 2px;
+  border: 1px solid green;
+}

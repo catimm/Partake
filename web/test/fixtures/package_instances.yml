@@ -1,0 +1,76 @@
+# == Schema Information
+#
+# Table name: package_instances
+#
+#  id                   :integer          not null, primary key
+#  package_id           :integer
+#  available_start_time :time
+#  available_end_time   :time
+#  price                :integer
+#  min_people           :integer
+#  max_people           :integer
+#  max_available        :integer
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#  cancel_notice        :string(255)
+#  available_days       :string(255)
+#  advance_notice       :string(255)
+#
+# Indexes
+#
+#  index_package_instances_on_package_id  (package_id)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  package_id: 1
+  available_start_time: '15:00:00'
+  available_end_time: '18:00:00'
+  price: 2000
+  advance_notice: 24
+  min_people: 1
+  max_people: 8
+  max_available: 3
+  created_at: <%= DateTime.now.utc %>
+  updated_at: <%= DateTime.now.utc %>
+
+two:
+  id: 2
+  package_id: 1
+  available_start_time: '20:00:00'
+  available_end_time: '02:00:00'
+  price: 2000
+  advance_notice: 24
+  min_people: 1
+  max_people: 8
+  max_available: 4
+  created_at: <%= DateTime.now.utc %>
+  updated_at: <%= DateTime.now.utc %>
+
+three:
+  id: 3
+  package_id: 2
+  available_start_time: '18:00:00'
+  available_end_time: '22:00:00'
+  price: 3000
+  advance_notice: 24
+  min_people: 2
+  max_people: 6
+  max_available: 2
+  created_at: <%= DateTime.now.utc %>
+  updated_at: <%= DateTime.now.utc %>
+
+three:
+  id: 4
+  package_id: 3
+  available_start_time: '15:00:00'
+  available_end_time: '22:00:00'
+  price: 1500
+  advance_notice: 24
+  min_people: 1
+  max_people: 8
+  max_available: 3
+  created_at: <%= DateTime.now.utc %>
+  updated_at: <%= DateTime.now.utc %>

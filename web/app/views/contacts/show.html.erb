@@ -1,0 +1,33 @@
+<div id="section wrap">
+	<%= render 'layouts/header' %> 
+	<div class="container mainBody">
+		<div class="row inviteBody">
+			<div class="page-header">
+			  <h2>Invite friends</h2>
+			</div>
+		</div>
+		<div class="row inviteBody">
+			<% if !@contacts.nil?%>
+				<% @contacts.each do |c|%>
+					<div class="col-sm-5">
+						<h5><%= c[:first_name]%> <% if !c[:last_name].nil?%><%= c[:last_name]%><%end%> </h5>
+					</div>
+					<div class="col-sm-5">
+						<h5><%= c[:email]%></h5>
+					</div>
+					<div class="col-sm-2">
+						<%= form_for @contact, remote: true, url: {action: "create"} do |f| %>
+						  	<%= f.hidden_field :user_id, value: current_user.id %>
+						  	<%= f.hidden_field :friend_name, value: c[:first_name] %>
+						  	<%= f.hidden_field :friend_email, value: c[:email] %>
+						  	<%= f.submit "Invite", class: "btn btn-success inviteButton" %>
+						<% end %>
+					</div>
+				<%end%>
+			<%end%>
+		</div>
+	</div>
+</div>
+<%= render 'layouts/footer' %>
+
+

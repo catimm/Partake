@@ -1,0 +1,91 @@
+# == Schema Information
+#
+# Table name: event_package_user_choices
+#
+#  id                      :integer          not null, primary key
+#  user_id                 :integer
+#  created_at              :datetime         not null
+#  updated_at              :datetime         not null
+#  response                :boolean
+#  event_package_option_id :integer
+#
+# Indexes
+#
+#  index_event_package_choices_on_user_id                       (user_id)
+#  index_event_package_user_choices_on_event_package_option_id  (event_package_option_id)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  user_id: 1
+  event_package_option_id: 1
+  response: true
+
+two:
+  id: 2
+  user_id: 2
+  event_package_option_id: 4
+  response: true
+
+three:
+  id: 3
+  user_id: 2
+  event_package_option_id: 5
+  response: true
+
+four:
+  id: 4
+  user_id: 1
+  event_package_option_id: 2
+  response: true
+
+five:
+  id: 5
+  user_id: 1
+  event_package_option_id: 3
+  response: true
+
+six:
+  id: 6
+  user_id: 2
+  event_package_option_id: 1
+  response: true
+
+seven:
+  id: 7
+  user_id: 2
+  event_package_option_id: 2
+  response: false
+
+eight:
+  id: 8
+  user_id: 2
+  event_package_option_id: 3
+  response: false
+
+nine:
+  id: 9
+  user_id: 4
+  event_package_option_id: 4
+  response: true
+
+ten:
+  id: 10
+  user_id: 4
+  event_package_option_id: 5
+  response: true
+
+eleven:
+  id: 11
+  user_id: 1
+  event_package_option_id: 6
+  response: true
+
+twelve:
+  id: 12
+  user_id: 1
+  event_package_option_id: 7
+  response: true
+

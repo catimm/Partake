@@ -1,0 +1,38 @@
+<div class="container" id="registerContainer">
+		<div class="modal-header">
+			<h2 class="text-center">Create a Partake account</h2>
+		</div> 
+		<div id="body" class="modal-body">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<%= link_to image_tag("facebook.png", :border => 0, id:"facebookImage"), user_omniauth_authorize_path(:facebook) %>
+				</div>
+			</div>
+			<div class="row">
+				<h5 class="text-center">or</h5>
+			</div>
+			<div class="row"> 
+			  <div class="col-xs-12 text-center"> 
+			    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %> 
+			      <%= devise_error_messages! %>
+			
+			      <%= f.text_field :first_name, placeholder: "First name" %>
+			      
+			      <%= f.text_field :last_name, placeholder: "Last name" %> 
+			
+			      <%= f.email_field :email, placeholder: "Email address" %> 
+			      
+			      <% if @user.password_required? %>
+			
+				      <%= f.password_field :password, placeholder: "Password" %> 
+				
+				      <%= f.password_field :password_confirmation, placeholder: "Confirm password" %> 
+				  <% end %>
+			      
+			      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %> 
+			    <% end %> 
+			  </div> 
+			</div>
+		</div>
+</div>
+

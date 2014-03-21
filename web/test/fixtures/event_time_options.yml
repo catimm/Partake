@@ -1,0 +1,47 @@
+# == Schema Information
+#
+# Table name: event_time_options
+#
+#  id         :integer          not null, primary key
+#  event_id   :integer
+#  time       :datetime
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+# Indexes
+#
+#  index_event_time_options_on_event_id  (event_id)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  event_id: 1
+  time: 2013-11-08 18:00:00
+
+two:
+  id: 2
+  event_id: 1
+  time: 2013-11-09 20:00:00
+
+three:
+  id: 3
+  event_id: 2
+  time: 2013-11-15 19:00:00
+
+four:
+  id: 4
+  event_id: 2
+  time: 2013-11-16 17:00:00
+
+five:
+  id: 5
+  event_id: 3
+  time: 2013-12-18 20:00:00
+
+six:
+  id: 6
+  event_id: 3
+  time: 2013-12-19 20:00:00
+

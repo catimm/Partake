@@ -1,0 +1,60 @@
+# == Schema Information
+#
+# Table name: packages
+#
+#  id           :integer          not null, primary key
+#  venue_id     :integer
+#  package_type :string(255)
+#  description  :text
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  enabled      :boolean
+#  title        :string(255)
+#  image_url    :string(255)
+#
+# Indexes
+#
+#  index_packages_on_venue_id  (venue_id)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  venue_id: 1
+  package_type: happy hour
+  title: Chef's counter surprise
+  description: Insert an amazing package description here!
+  enabled: true
+  created_at: <%= DateTime.now.utc %>
+  updated_at: <%= DateTime.now.utc %>
+
+two:
+  id: 2
+  venue_id: 1
+  package_type: dinner
+  title: All the greatness. No wait.
+  description: Amazing dinner package VIP table the works!
+  enabled: true
+  created_at: <%= DateTime.now.utc %>
+  updated_at: <%= DateTime.now.utc %>
+
+three:
+  id: 3
+  venue_id: 2
+  package_type: happy hour
+  title: The sampling extravaganza.
+  description: One of a kind octopus or insert some exotic seafood here
+  enabled: true
+  created_at: <%= DateTime.now.utc %>
+  updated_at: <%= DateTime.now.utc %>
+
+four:
+  id: 4
+  venue_id: 2
+  package_type: happy hour
+  title: Gluten free. Guilt free.
+  description: Some crazy beer options
+  enabled: false
+  created_at: <%= DateTime.now.utc %>
+  updated_at: <%= DateTime.now.utc %>

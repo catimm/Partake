@@ -1,0 +1,115 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                     :integer          not null, primary key
+#  email                  :string(255)      default(""), not null
+#  encrypted_password     :string(255)      default(""), not null
+#  reset_password_token   :string(255)
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer          default(0), not null
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string(255)
+#  last_sign_in_ip        :string(255)
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  confirmation_token     :string(255)
+#  confirmed_at           :datetime
+#  confirmation_sent_at   :datetime
+#  unconfirmed_email      :string(255)
+#  first_name             :string(255)
+#  last_name              :string(255)
+#  stripe_customer_id     :string(255)
+#  authentication_token   :string(255)
+#  mobile_number          :integer
+#  role                   :string(255)      default("registered"), not null
+#
+# Indexes
+#
+#  index_users_on_confirmation_token    (confirmation_token) UNIQUE
+#  index_users_on_mobile_number         (mobile_number)
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+
+ansh_s: 
+  id: 1
+  email: ansh_s@hotmail.com
+  encrypted_password: $2a$10$whqh247DsGVRMa5c2wIa1e/ydeubFrjixR2h0FFGyKvYvk6Tjv.Y6  # test12345
+  first_name: Anshuman
+  last_name: Srivastava
+  confirmed_at: <%= DateTime.now.utc %>
+  mobile_number: 4259907778
+  role: <%= UserRole::Registered %>
+
+chris:
+  id: 2
+  email: schmch@gmail.com
+  encrypted_password: $2a$10$whqh247DsGVRMa5c2wIa1e/ydeubFrjixR2h0FFGyKvYvk6Tjv.Y6  # test12345
+  first_name: Chris
+  last_name: Schmich
+  confirmed_at: <%= DateTime.now.utc %>
+  mobile_number: 4259917778
+  role: <%= UserRole::Registered %>
+
+bruce:
+  id: 3
+  email: bruce@wayneenterprises.com
+  encrypted_password: $2a$10$whqh247DsGVRMa5c2wIa1e/ydeubFrjixR2h0FFGyKvYvk6Tjv.Y6  # test12345
+  first_name: Bruce
+  last_name: Wayne
+  confirmed_at: <%= DateTime.now.utc %>
+  mobile_number: 4259927778
+  role: <%= UserRole::Registered %>
+
+clark:
+  id: 4
+  email: clark@dailyplanet.com
+  encrypted_password: $2a$10$whqh247DsGVRMa5c2wIa1e/ydeubFrjixR2h0FFGyKvYvk6Tjv.Y6  # test12345
+  first_name: Clark
+  last_name: Kent
+  confirmed_at: <%= DateTime.now.utc %>
+  mobile_number: 2069927778
+  role: <%= UserRole::Registered %>
+
+dick:
+  id: 5
+  email: dick@wayneenterprises.com
+  encrypted_password: $2a$10$whqh247DsGVRMa5c2wIa1e/ydeubFrjixR2h0FFGyKvYvk6Tjv.Y6  # test12345
+  first_name: Dick
+  last_name: Grayson
+  confirmed_at: <%= DateTime.now.utc %>
+  mobile_number: 2069997778
+  role: <%= UserRole::Registered %>
+
+barry:
+  id: 6
+  email: barry@flash.com
+  encrypted_password: $2a$10$whqh247DsGVRMa5c2wIa1e/ydeubFrjixR2h0FFGyKvYvk6Tjv.Y6  # test12345
+  first_name: Barry
+  last_name: Allen
+  confirmed_at: <%= DateTime.now.utc %>
+  mobile_number: 2069977778
+  role: <%= UserRole::Registered %>
+
+hal:
+  id: 7
+  first_name: Hal
+  last_name: Jordan
+  mobile_number: 2469977778
+  role: <%= UserRole::Unregistered %>
+
+scott:
+  id: 8
+  first_name: Scott
+  last_name: Summers
+  mobile_number: 2065294854
+  role: <%= UserRole::Unregistered %>

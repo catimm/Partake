@@ -1,0 +1,93 @@
+@import "base";
+
+.landing {
+  .header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+    @include drop-shadow(0px, 5px, rgba(#000, 1.0));
+
+    ul {
+      list-style: none;
+      text-align: center;
+
+      .header-logo {
+        font-family: 'Amaranth', Arial, sans-serif; 
+        font-size: 70px;
+        display: inline-block;
+
+        a {
+          text-decoration: none;
+          color: black;
+        }
+      }
+      .google-badge {
+        display: inline-block;
+        position: absolute;
+        right: 20%;
+        margin-top: 30px;
+      }
+      .apple-badge {
+        display: inline-block;
+        position: absolute;
+        right: 5%;
+        margin-top: 32px;       
+      }
+    }
+  }
+
+  .slogan {
+    @include process-image('Dinner-Party.jpg');
+    padding-top: 100px;
+
+    h1 {
+      font-weight: 500;
+      font-size: 50px;
+      text-align: center;
+      color: #fff;
+      padding-top: 120px;
+    }
+  }
+
+  .process-1-details {
+    @include process-details;
+  }
+
+  .process-1-image {
+    @include process-image('beer-flight.jpg');
+  }
+
+  .process-2-details {
+    @include process-details;
+  }
+
+  .process-2-image {
+    @include process-image('tipping.jpg');
+  }
+
+  .process-3-details {
+    @include process-details;
+  }
+
+  .footer {
+    margin-top: 70px;
+    font-size: 20px;
+    background-color: #ADD8E6;
+    height: 200px;
+    width: 100%;
+    position: relative;
+
+    ul {
+      text-align: center;
+      list-style: none;
+
+      li {
+        display: inline-block;
+        margin-right: 70px;
+        margin-top: 70px;
+      }
+    }
+  }
+}

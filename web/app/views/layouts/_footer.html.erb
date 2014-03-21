@@ -1,0 +1,38 @@
+ <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                        	<%= link_to "Home", root_path %>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                        	<%= link_to "Privacy", privacy_path %>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                        	 <%= link_to "Terms", terms_path %>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                        	 <%= mail_to "support@wepartake.com", "Contact" %>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                        	<%= link_to "https://twitter.com/WePartake", target: "_blank" do %>
+						  		<i class="icon-twitter"></i>
+						  	<% end %>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                        	 <%= link_to "https://www.facebook.com/wepartake", target: "_blank" do %>
+							  	<i class="icon-facebook"></i>
+							  <% end %>	
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; Partake 2014. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
