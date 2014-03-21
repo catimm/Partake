@@ -4,13 +4,7 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile ~/.gitignore_global
 */.bundle
-*/db/*.sqlite3
+*/db/*.postgres
 */log/*.log
 */tmp
 */config/application.yml
-**/phonegap/platforms/android/local.properties
-*.xdk
-app/build/
-bin/
-.sass-cache/
-.project
