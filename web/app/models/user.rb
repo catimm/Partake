@@ -47,6 +47,8 @@ class User < ActiveRecord::Base
 
   has_many :ratings
   has_many :fb_friends
+  has_many :contacts
+  has_many :friends
   has_many :authentications
   has_many :package_responses
 

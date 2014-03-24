@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140307210824) do
+ActiveRecord::Schema.define(:version => 20140324174105) do
 
   create_table "authentications", :force => true do |t|
     t.string   "user_id"
@@ -88,6 +88,14 @@ ActiveRecord::Schema.define(:version => 20140307210824) do
 
   add_index "finalized_events", ["event_id"], :name => "index_finalized_events_on_event_id"
   add_index "finalized_events", ["package_instance_id"], :name => "index_finalized_events_on_package_instance_id"
+
+  create_table "friends", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.string   "source"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "invitees", :force => true do |t|
     t.integer  "event_id"

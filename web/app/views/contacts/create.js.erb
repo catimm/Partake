@@ -1,17 +1,5 @@
 
-	console.log("jquery working");
-	$('.new_contact').click(function(e) {
-	    console.log("click function working");
-	    var submitButton = $(this).find('input[name="commit"]');
-	    var buttonValue = submitButton.val();
-		console.log(buttonValue);
-		if (buttonValue == "Invited") {
-			submitButton.preventDefault();
-			console.log('default prevented');
-		} else {
-			submitButton.val("Invited");
-			submitButton.removeClass("btn btn-success inviteButton").addClass("btn btn-info inviteButton");
-			console.log('complete');
-		}
-		
+	$(".inviteButton").on('click', function() { 
+		$(this).val("Invited");
+		$(this).removeClass("btn btn-success inviteButton").addClass("btn btn-info inviteButton");
 	});

@@ -11,5 +11,6 @@
 #
 
 class Contact < ActiveRecord::Base
+  belongs_to :user
   attr_accessible :friend_email, :friend_name, :user_id
 end
