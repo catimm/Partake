@@ -1,20 +1,57 @@
 class RegistrationsController < Devise::RegistrationsController
-  
 
-    
-    def build_resources(*args)
-      super
-      if session[:omniauth]
-        @user.apply_omniauth(session[:omniauth])
-        @user.valid?
+  def create
+    build_resource(sign_up_params)
+
+    resource_saved = resource.save
+    yield resource if block_given?
+    if resource_saved
+      email = resource.email      
+      registered = User.find_by_email(email)
+      
+      @emailFriendFound = Contact.find_all_by_friend_email(email)
+      # loop through each friend to add to db
+      @emailFriendFound.each do |f|
+        friend = Friend.new
+        friend.user_id = registered.id
+        friend.friend_id = f["user_id"]
+        friend.source = "email"
+        friendAlready1 = Friend.find_by_user_id_and_friend_id(registered.id, f["user_id"])
+        friendAlready2 = Friend.find_by_user_id_and_friend_id(f["user_id"], registered.id)
+        if friendAlready1 || friendAlready2
+           flash[:notice] = "already a friend"
+         else 
+           friend.save
+         end   
+        end
+      if resource.active_for_authentication?
+        set_flash_message :notice, :signed_up if is_navigational_format?
+        sign_up(resource_name, resource)
+        respond_with resource, location: after_sign_up_path_for(resource)
+      else
+        set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_navigational_format?
+        expire_session_data_after_sign_in!
+        respond_with resource, location: after_inactive_sign_up_path_for(resource)
       end
+    else
+      clean_up_passwords resource
+      respond_with resource
     end
+  end
+    
+  def build_resources(*args)
+    super
+    if session[:omniauth]
+      @user.apply_omniauth(session[:omniauth])
+      @user.valid?
+    end 
+  end
 
   def after_sign_up_path_for(resource)
     @user = confirm_path
   end
   
-  def after_inactive_sign_up_path_for(resource)
+  def after_inactive_sign_up_path_for(resource) 
     @user = confirm_path
   end
 
