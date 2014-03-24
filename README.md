@@ -16,6 +16,8 @@ Partake
 - Install bundler: `gem install bundler`
 - Install rake: `gem install rake`
 - Install Postgres
+-- On Mac/Linux, follow this page: http://wikimatze.de/installing-postgresql-gem-under-ubuntu-and-mac.html
+- On Ubuntu, install SQLite3 development headers `sudo apt-get install libsqlite3-dev` since those development headers will be needed for sqlite gem to install. (sqlite will be needed when doing `bundle install` in next section). See: [this SO question] (http://stackoverflow.com/questions/3458602/sqlite3-ruby-install-error-on-ubuntu?rq=1) for more details
 - Under `/web`:
  - Copy `application.yml` received through email to `config/` folder
  - Install dependencies: `bundle install`
