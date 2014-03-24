@@ -16,6 +16,7 @@ Partake
 - Install bundler: `gem install bundler`
 - Install rake: `gem install rake`
 - Install Postgres
+-- On Mac/Linux, follow this page: http://wikimatze.de/installing-postgresql-gem-under-ubuntu-and-mac.html
 - Under `/web`:
  - Copy `application.yml` received through email to `config/` folder
  - Install dependencies: `bundle install`
