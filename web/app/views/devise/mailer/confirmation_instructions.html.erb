@@ -1,5 +1,12 @@
-<p>Welcome to Partake, <%= @resource.first_name %>!</p>
+<div class="panel panel-default col-sm-12 col-md-5 fbHide">
+	<div class="panel-heading container">
+		<h4 class="panel-title">Welcome to Partake, <%= @resource.first_name %>!</h4>
+	</div>
+	<div class="panel-body">
+		<h5>Please confirm your email address by clicking the link below:</h5>
+		<p><%= link_to 'Confirm my Partake account', confirmation_url(@resource, :confirmation_token => @token), class: "btn btn-success" %></p>
+	</div>
+</div>
 
-<p>You can confirm your account email by clicking the link below:</p>
 
-<p><%= link_to 'Confirm my Partake account', confirmation_url(@resource, :confirmation_token => @token) %></p>
+

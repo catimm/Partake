@@ -3,7 +3,7 @@
 # Table name: authentications
 #
 #  id           :integer          not null, primary key
-#  user_id      :string(255)
+#  user_id      :integer
 #  provider     :string(255)
 #  uid          :string(255)
 #  token        :string(255)

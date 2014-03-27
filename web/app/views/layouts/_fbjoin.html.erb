@@ -1,0 +1,9 @@
+<div class="panel panel-default col-sm-12 col-md-5 fbHide">
+	<div class="panel-heading container">
+		<i class="icon-large icon-facebook fbIcon"></i>
+		<h4 class="panel-title">Find Facebook friends on Partake</h4>
+	</div>
+	<div class="panel-body text-center">
+		<%= link_to image_tag("facebook.png", :border => 0, id:"facebookImage"), user_omniauth_authorize_path(:facebook) %>
+	</div>
+</div>

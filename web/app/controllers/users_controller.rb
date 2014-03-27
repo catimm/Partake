@@ -26,4 +26,9 @@ class UsersController < ApplicationController
       redirect_to root_path
     end
   end
+  
+  def thanks
+    @facebookuser = Authentication.where(:user_id => current_user)
+    Rails.logger.debug("My object: #{@facebookuser.inspect}")
+  end
 end
