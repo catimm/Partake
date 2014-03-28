@@ -24,9 +24,15 @@ Partake
  - Create the database: `rake db:create`
  - Ensure the database is up-to-date: `rake db:migrate`
 
-### Running the server
+### Running the web server
 
 - Under `/web`:
  - Start the server: `rails s`
 
+### Running the mail server
 
+- Under `/web`:
+ - Open a 2nd terminal with: `mailcatcher --ip 127.0.0.1 --smtp-port 25 --http-port 1080`
+ - Open webpage at the same location to check mail sent by Partake
+ - Note: this is required to be open in order to run any procedure that involves email being sent
+ - 
