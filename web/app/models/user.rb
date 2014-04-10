@@ -51,6 +51,7 @@ class User < ActiveRecord::Base
   has_many :friends
   has_many :authentications
   has_many :package_responses
+  has_many :commons
 
   before_save :ensure_authentication_token # TODO anshuman 10/18/2013 when should we reset auth token?
 
