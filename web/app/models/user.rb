@@ -58,6 +58,13 @@ class User < ActiveRecord::Base
 
   validates :role, :presence => true, :inclusion => { :in => [UserRole::Registered, UserRole::Unregistered]}
   
+  def self.common_update
+    @user = User.all
+    @user.each do |u|
+      Common.update(u.email).deliver
+    end
+  end
+  
   def apply_omniauth(omni)
     authentications.build(:provider => omni['provider'],
     :uid => omni['uid'],

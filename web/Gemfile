@@ -38,7 +38,7 @@ gem "koala", "~> 1.8.0rc1"
 gem "omnicontacts"
 gem 'squeel'
 gem 'mailcatcher'
-
+gem 'whenever', :require => false
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
