@@ -24,13 +24,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-roup :production do
-  gem 'capybara'
-  gem 'rspec-rails'
-  gem 'annotate'
-  gem 'mailcatcher'
-end
-
 gem 'jquery-rails'
 gem 'devise'
 gem 'figaro'
