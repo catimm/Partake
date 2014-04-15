@@ -37,6 +37,7 @@ gem 'fb_graph'
 gem "koala", "~> 1.8.0rc1"
 gem "omnicontacts"
 gem 'squeel'
+gem 'thin'
 
 
 # To use ActiveModel has_secure_password
