@@ -269,4 +269,5 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   squeel
   stripe
+  thin
   uglifier (>= 1.0.3)
