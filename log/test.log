@@ -1,0 +1,738 @@
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (15.6ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER(' ') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (15.6ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo,com') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request_at_foo.org') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('example.request@foo.') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar_baz.com') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar+baz.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo.COM') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('A_US-ER@f.b.org') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('frst.lst@foo.jp') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('a+b@baz.cn') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('REQUEST@EXAMPLE.COM') LIMIT 1
+  [1m[36mSQL (15.6ms)[0m  [1mINSERT INTO "requests" ("city", "created_at", "email", "name", "state", "updated_at", "zip") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", nil], ["created_at", Fri, 27 Dec 2013 01:25:25 UTC +00:00], ["email", "request@example.com"], ["name", "Example request"], ["state", nil], ["updated_at", Fri, 27 Dec 2013 01:25:25 UTC +00:00], ["zip", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRequest Exists (15.6ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER(' ') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo,com') LIMIT 1
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request_at_foo.org') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('example.request@foo.') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar_baz.com') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar+baz.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo.COM') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('A_US-ER@f.b.org') LIMIT 1
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('frst.lst@foo.jp') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('a+b@baz.cn') LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('REQUEST@EXAMPLE.COM') LIMIT 1
+  [1m[36mSQL (7.0ms)[0m  [1mINSERT INTO "requests" ("city", "created_at", "email", "name", "state", "updated_at", "zip") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", nil], ["created_at", Fri, 27 Dec 2013 03:09:32 UTC +00:00], ["email", "request@example.com"], ["name", "Example request"], ["state", nil], ["updated_at", Fri, 27 Dec 2013 03:09:32 UTC +00:00], ["zip", nil]]
+  [1m[35m (1.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (153.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER(' ') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo,com') LIMIT 1
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request_at_foo.org') LIMIT 1[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('example.request@foo.') LIMIT 1
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar_baz.com') LIMIT 1[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar+baz.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo.COM') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('A_US-ER@f.b.org') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('frst.lst@foo.jp') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('a+b@baz.cn') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('REQUEST@EXAMPLE.COM') LIMIT 1
+  [1m[36mSQL (31.0ms)[0m  [1mINSERT INTO "requests" ("city", "created_at", "email", "name", "state", "updated_at", "zip") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", nil], ["created_at", Sat, 28 Dec 2013 23:10:36 UTC +00:00], ["email", "request@example.com"], ["name", "Example request"], ["state", nil], ["updated_at", Sat, 28 Dec 2013 23:10:36 UTC +00:00], ["zip", nil]]
+  [1m[35m (1.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER(' ') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo,com') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request_at_foo.org') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('example.request@foo.') LIMIT 1
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar_baz.com') LIMIT 1[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar+baz.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo.COM') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('A_US-ER@f.b.org') LIMIT 1
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('frst.lst@foo.jp') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('a+b@baz.cn') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('REQUEST@EXAMPLE.COM') LIMIT 1
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO "requests" ("city", "created_at", "email", "name", "state", "updated_at", "zip") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", nil], ["created_at", Sat, 28 Dec 2013 23:14:10 UTC +00:00], ["email", "request@example.com"], ["name", "Example request"], ["state", nil], ["updated_at", Sat, 28 Dec 2013 23:14:10 UTC +00:00], ["zip", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (2.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER(' ') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo,com') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request_at_foo.org') LIMIT 1[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('example.request@foo.') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar_baz.com') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar+baz.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo.COM') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('A_US-ER@f.b.org') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('frst.lst@foo.jp') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('a+b@baz.cn') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('REQUEST@EXAMPLE.COM') LIMIT 1
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO "requests" ("city", "created_at", "email", "name", "state", "updated_at", "zip") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", nil], ["created_at", Sat, 28 Dec 2013 23:14:46 UTC +00:00], ["email", "request@example.com"], ["name", "Example request"], ["state", nil], ["updated_at", Sat, 28 Dec 2013 23:14:46 UTC +00:00], ["zip", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER(' ') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo,com') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request_at_foo.org') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('example.request@foo.') LIMIT 1
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar_baz.com') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar+baz.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo.COM') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('A_US-ER@f.b.org') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('frst.lst@foo.jp') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('a+b@baz.cn') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('REQUEST@EXAMPLE.COM') LIMIT 1
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO "requests" ("city", "created_at", "email", "name", "state", "updated_at", "zip") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", nil], ["created_at", Sat, 28 Dec 2013 23:15:06 UTC +00:00], ["email", "request@example.com"], ["name", "Example request"], ["state", nil], ["updated_at", Sat, 28 Dec 2013 23:15:06 UTC +00:00], ["zip", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER(' ') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo,com') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request_at_foo.org') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('example.request@foo.') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar_baz.com') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar+baz.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo.COM') LIMIT 1[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('A_US-ER@f.b.org') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('frst.lst@foo.jp') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('a+b@baz.cn') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('REQUEST@EXAMPLE.COM') LIMIT 1
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO "requests" ("city", "created_at", "email", "name", "state", "updated_at", "zip") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", nil], ["created_at", Sat, 28 Dec 2013 23:21:28 UTC +00:00], ["email", "request@example.com"], ["name", "Example request"], ["state", nil], ["updated_at", Sat, 28 Dec 2013 23:21:28 UTC +00:00], ["zip", nil]]
+  [1m[35m (1.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1
+  [1m[36m (17.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER(' ') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo,com') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request_at_foo.org') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('example.request@foo.') LIMIT 1
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar_baz.com') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar+baz.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo.COM') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('A_US-ER@f.b.org') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('frst.lst@foo.jp') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('a+b@baz.cn') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('REQUEST@EXAMPLE.COM') LIMIT 1
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO "requests" ("city", "created_at", "email", "name", "state", "updated_at", "zip") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", nil], ["created_at", Sat, 28 Dec 2013 23:40:08 UTC +00:00], ["email", "request@example.com"], ["name", "Example request"], ["state", nil], ["updated_at", Sat, 28 Dec 2013 23:40:08 UTC +00:00], ["zip", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (2.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER(' ') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo,com') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request_at_foo.org') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('example.request@foo.') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar_baz.com') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar+baz.com') LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo.COM') LIMIT 1[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('A_US-ER@f.b.org') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('frst.lst@foo.jp') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('a+b@baz.cn') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('REQUEST@EXAMPLE.COM') LIMIT 1
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO "requests" ("city", "created_at", "email", "name", "state", "updated_at", "zip") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", nil], ["created_at", Sun, 29 Dec 2013 00:04:08 UTC +00:00], ["email", "request@example.com"], ["name", "Example request"], ["state", nil], ["updated_at", Sun, 29 Dec 2013 00:04:08 UTC +00:00], ["zip", nil]]
+  [1m[35m (1.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER(' ') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo,com') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request_at_foo.org') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('example.request@foo.') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar_baz.com') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar+baz.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo.COM') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('A_US-ER@f.b.org') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('frst.lst@foo.jp') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('a+b@baz.cn') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('REQUEST@EXAMPLE.COM') LIMIT 1
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO "requests" ("city", "created_at", "email", "name", "state", "updated_at", "zip") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", nil], ["created_at", Sun, 29 Dec 2013 00:05:55 UTC +00:00], ["email", "request@example.com"], ["name", "Example request"], ["state", nil], ["updated_at", Sun, 29 Dec 2013 00:05:55 UTC +00:00], ["zip", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2013-12-28 16:05:55 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 48ms (Views: 48.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "requests" 
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2013-12-28 16:05:55 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.0ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER(' ') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo,com') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request_at_foo.org') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('example.request@foo.') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar_baz.com') LIMIT 1[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar+baz.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo.COM') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('A_US-ER@f.b.org') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('frst.lst@foo.jp') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('a+b@baz.cn') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('REQUEST@EXAMPLE.COM') LIMIT 1
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO "requests" ("city", "created_at", "email", "name", "state", "updated_at", "zip") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", nil], ["created_at", Sun, 29 Dec 2013 00:11:03 UTC +00:00], ["email", "request@example.com"], ["name", "Example request"], ["state", nil], ["updated_at", Sun, 29 Dec 2013 00:11:03 UTC +00:00], ["zip", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER(' ') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo,com') LIMIT 1
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request_at_foo.org') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('example.request@foo.') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar_baz.com') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar+baz.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo.COM') LIMIT 1[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('A_US-ER@f.b.org') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('frst.lst@foo.jp') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('a+b@baz.cn') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (1.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('REQUEST@EXAMPLE.COM') LIMIT 1
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "requests" ("city", "created_at", "email", "name", "state", "updated_at", "zip") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", nil], ["created_at", Sun, 29 Dec 2013 00:19:07 UTC +00:00], ["email", "request@example.com"], ["name", "Example request"], ["state", nil], ["updated_at", Sun, 29 Dec 2013 00:19:07 UTC +00:00], ["zip", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER(' ') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo,com') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request_at_foo.org') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('example.request@foo.') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar_baz.com') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar+baz.com') LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo.COM') LIMIT 1[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('A_US-ER@f.b.org') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('frst.lst@foo.jp') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('a+b@baz.cn') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('REQUEST@EXAMPLE.COM') LIMIT 1
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO "requests" ("city", "created_at", "email", "name", "state", "updated_at", "zip") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", nil], ["created_at", Sun, 29 Dec 2013 00:22:48 UTC +00:00], ["email", "request@example.com"], ["name", "Example request"], ["state", nil], ["updated_at", Sun, 29 Dec 2013 00:22:48 UTC +00:00], ["zip", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2013-12-28 16:24:10 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 43ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "requests" 
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2013-12-28 16:24:10 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER(' ') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo,com') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request_at_foo.org') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('example.request@foo.') LIMIT 1[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar_baz.com') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar+baz.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo.COM') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('A_US-ER@f.b.org') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('frst.lst@foo.jp') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('a+b@baz.cn') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('REQUEST@EXAMPLE.COM') LIMIT 1[0m
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "requests" ("city", "created_at", "email", "name", "state", "updated_at", "zip") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", nil], ["created_at", Sun, 29 Dec 2013 00:24:10 UTC +00:00], ["email", "request@example.com"], ["name", "Example request"], ["state", nil], ["updated_at", Sun, 29 Dec 2013 00:24:10 UTC +00:00], ["zip", nil]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2013-12-28 16:46:53 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 67ms (Views: 47.0ms | ActiveRecord: 11.0ms)
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "requests" 
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2013-12-28 16:46:53 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER(' ') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo,com') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request_at_foo.org') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('example.request@foo.') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar_baz.com') LIMIT 1
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar+baz.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo.COM') LIMIT 1
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('A_US-ER@f.b.org') LIMIT 1[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('frst.lst@foo.jp') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('a+b@baz.cn') LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('REQUEST@EXAMPLE.COM') LIMIT 1[0m
+  [1m[35mSQL (5.0ms)[0m  INSERT INTO "requests" ("city", "created_at", "email", "name", "state", "updated_at", "zip") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", nil], ["created_at", Sun, 29 Dec 2013 00:46:53 UTC +00:00], ["email", "request@example.com"], ["name", "Example request"], ["state", nil], ["updated_at", Sun, 29 Dec 2013 00:46:53 UTC +00:00], ["zip", nil]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2013-12-28 16:48:02 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 66ms (Views: 46.0ms | ActiveRecord: 14.0ms)
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "requests" 
+  [1m[36m (1.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2013-12-28 16:48:02 -0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "requests" [0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER(' ') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo,com') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request_at_foo.org') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('example.request@foo.') LIMIT 1
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar_baz.com') LIMIT 1[0m
+  [1m[35mRequest Exists (1.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('foo@bar+baz.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mRequest Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@foo.COM') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('A_US-ER@f.b.org') LIMIT 1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('frst.lst@foo.jp') LIMIT 1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('a+b@baz.cn') LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mRequest Exists (0.0ms)[0m  SELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('REQUEST@EXAMPLE.COM') LIMIT 1
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO "requests" ("city", "created_at", "email", "name", "state", "updated_at", "zip") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", nil], ["created_at", Sun, 29 Dec 2013 00:48:02 UTC +00:00], ["email", "request@example.com"], ["name", "Example request"], ["state", nil], ["updated_at", Sun, 29 Dec 2013 00:48:02 UTC +00:00], ["zip", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRequest Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "requests" WHERE LOWER("requests"."email") = LOWER('request@example.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+Started GET "/package_tests/week" for 127.0.0.1 at 2014-01-15 15:57:41 -0800
+  [1m[35m (1.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Started GET "/package_tests/week" for 127.0.0.1 at 2014-01-15 15:59:32 -0800
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+Started GET "/package_test/week" for 127.0.0.1 at 2014-01-15 16:01:29 -0800
+Processing by PackageTestController#week as HTML
+  Rendered package_test/week.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 70ms (Views: 70.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
