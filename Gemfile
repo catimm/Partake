@@ -9,6 +9,7 @@ group :development, :test do
   gem 'capybara'
   gem 'rspec-rails'
   gem 'annotate'
+  gem 'mailcatcher'
 end
 
 # Gems used only for assets and not required
@@ -21,6 +22,13 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+roup :production do
+  gem 'capybara'
+  gem 'rspec-rails'
+  gem 'annotate'
+  gem 'mailcatcher'
 end
 
 gem 'jquery-rails'
@@ -36,7 +44,7 @@ gem 'fb_graph'
 gem "koala", "~> 1.8.0rc1"
 gem "omnicontacts"
 gem 'squeel'
-gem 'mailcatcher'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
