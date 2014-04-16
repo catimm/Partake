@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140407220918) do
+ActiveRecord::Schema.define(:version => 20140416193356) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -151,6 +151,9 @@ ActiveRecord::Schema.define(:version => 20140407220918) do
     t.boolean  "enabled"
     t.string   "title"
     t.string   "image_url"
+    t.text     "description2"
+    t.text     "description3"
+    t.text     "description4"
   end
 
   add_index "packages", ["venue_id"], :name => "index_packages_on_venue_id"

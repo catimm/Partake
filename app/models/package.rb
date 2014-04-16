@@ -11,6 +11,9 @@
 #  enabled      :boolean
 #  title        :string(255)
 #  image_url    :string(255)
+#  description2 :text
+#  description3 :text
+#  description4 :text
 #
 # Indexes
 #
