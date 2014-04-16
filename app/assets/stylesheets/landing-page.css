@@ -273,13 +273,11 @@ p.copyright {
 }
 .packageTitle {
   font-size: 125%;
-  line-height: 1;
   font-weight: 700;
   margin-bottom: -3.5px;
 }
 .packageDescription {
   font-size: 112.5%;
-  line-height: 1.2;
 }
 .finePrint {
   border-left: 1px solid #CCCCCC;
