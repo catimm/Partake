@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140416204408) do
+ActiveRecord::Schema.define(:version => 20140416214838) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -39,44 +39,6 @@ ActiveRecord::Schema.define(:version => 20140416204408) do
     t.datetime "updated_at",   :null => false
   end
 
-  create_table "event_package_options", :force => true do |t|
-    t.integer  "event_id"
-    t.integer  "package_instance_id"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
-  end
-
-  add_index "event_package_options", ["event_id"], :name => "index_event_package_options_on_event_id"
-  add_index "event_package_options", ["package_instance_id"], :name => "index_event_package_options_on_package_instance_id"
-
-  create_table "event_time_options", :force => true do |t|
-    t.integer  "event_id"
-    t.datetime "time"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "event_time_options", ["event_id"], :name => "index_event_time_options_on_event_id"
-
-  create_table "event_time_user_choices", :force => true do |t|
-    t.integer  "user_id"
-    t.boolean  "response"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
-    t.integer  "event_time_option_id"
-  end
-
-  add_index "event_time_user_choices", ["event_time_option_id"], :name => "index_event_time_user_choices_on_event_time_option_id"
-  add_index "event_time_user_choices", ["user_id"], :name => "index_event_time_choices_on_user_id"
-
-  create_table "events", :force => true do |t|
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "events", ["user_id"], :name => "index_events_on_user_id"
-
   create_table "fb_friends", :force => true do |t|
     t.integer  "user_id"
     t.string   "friend_name"
@@ -85,18 +47,6 @@ ActiveRecord::Schema.define(:version => 20140416204408) do
     t.datetime "updated_at",               :null => false
   end
 
-  create_table "finalized_events", :force => true do |t|
-    t.integer  "event_id"
-    t.integer  "package_instance_id"
-    t.datetime "timestamp"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
-    t.boolean  "confirmed"
-  end
-
-  add_index "finalized_events", ["event_id"], :name => "index_finalized_events_on_event_id"
-  add_index "finalized_events", ["package_instance_id"], :name => "index_finalized_events_on_package_instance_id"
-
   create_table "friends", :force => true do |t|
     t.integer  "user_id"
     t.integer  "friend_id"
@@ -104,18 +54,6 @@ ActiveRecord::Schema.define(:version => 20140416204408) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  create_table "invitees", :force => true do |t|
-    t.integer  "event_id"
-    t.integer  "user_id"
-    t.string   "uid"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.boolean  "accepted"
-  end
-
-  add_index "invitees", ["event_id"], :name => "index_invitees_on_event_id"
-  add_index "invitees", ["user_id"], :name => "index_invitees_on_user_id"
 
   create_table "package_instances", :force => true do |t|
     t.integer  "package_id"
@@ -180,17 +118,6 @@ ActiveRecord::Schema.define(:version => 20140416204408) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  create_table "responses", :force => true do |t|
-    t.integer  "user_id"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
-    t.boolean  "response"
-    t.integer  "event_package_option_id"
-  end
-
-  add_index "responses", ["event_package_option_id"], :name => "index_event_package_user_choices_on_event_package_option_id"
-  add_index "responses", ["user_id"], :name => "index_event_package_choices_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "",           :null => false

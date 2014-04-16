@@ -8,7 +8,6 @@ gem 'rails', '3.2.13'
 group :development, :test do
   gem 'capybara'
   gem 'rspec-rails'
-  gem 'annotate'
   gem 'mailcatcher'
 end
 
@@ -25,6 +24,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'annotate'
 gem 'devise'
 gem 'figaro'
 gem 'stripe'

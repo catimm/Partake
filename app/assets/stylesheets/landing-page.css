@@ -252,7 +252,7 @@ p.copyright {
   display: block;
 }
 .venueDets {
-  margin: -7.5px 0 0 2.5px;
+  margin: -15px 0 0 2.5px;
   width: 100%;
   height: 20px;
   float: left;
@@ -273,7 +273,9 @@ p.copyright {
 }
 .packageTitle {
   font-size: 125%;
-  line-height: 1.5;
+  line-height: 1;
+  font-weight: 700;
+  margin-bottom: -3.5px;
 }
 .packageDescription {
   font-size: 112.5%;
