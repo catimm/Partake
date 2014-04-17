@@ -21,19 +21,17 @@ Web::Application.configure do
   config.assets.digest = true
 
   # Email setup
-  config.action_mailer.default_url_options = { :host => 'http://yoursite.herokuapp.com' }
-
-  config.action_mailer.delivery_method = :smtp 
-  
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  address: "smtp.gmail.com",
-  port: 587,
-  domain: ENV["GMAIL_DOMAIN"],
-  authentication: "plain",
-  enable_starttls_auto: true,
-  user_name: ENV["GMAIL_USERNAME"],
-  password: ENV["GMAIL_PASSWORD"]
+    address: "smtp.mandrillapp.com",
+    port: 587,
+    authentication: "plain",
+    user_name: "app24180761@heroku.com",
+    password: ENV['SMTP_PASSWORD'],
+    enable_starttls_auto: false
   }
+  config.action_mailer.raise_delivery_errors = true
+  
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
