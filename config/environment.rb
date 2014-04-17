@@ -10,7 +10,3 @@ ENV['SSL_CERT_FILE'] = File.expand_path(File.dirname(__FILE__)) + "/lib/assets/c
 
 # set up email
 ActionMailer::Base.delivery_method = :smtp
-
-# FB credentials
-ENV['FB_ID'] = '288193721329968'
-ENV['FB_SECRET'] = '3a9b4b6a7bebe86ff42c548b568052a3'

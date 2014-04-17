@@ -4,7 +4,7 @@ Devise.setup do |config|
   
 
   # tell devise we are going to use Facebook authentications.
-  config.omniauth :facebook, ENV['FB_ID'], ENV['FB_SECRET'], 
+  config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"], 
     {:scope => 'email',
     :client_options => {:ssl => {:ca_file => 'lib/ca-bundle.crt'}},
     :strategy_class => OmniAuth::Strategies::Facebook}

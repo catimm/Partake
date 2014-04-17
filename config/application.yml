@@ -7,3 +7,7 @@
 # STRIPE_PUBLIC_KEY: pk_BRgD57O8fHja9HxduJUszhef6jCyS
 STRIPE_API_KEY: sk_test_767C4ZursfP7cEgumC9vPMNv
 SUPPORT_EMAIL: ctiv@hotmail.com
+
+# FB credentials
+FB_ID: 288193721329968
+FB_SECRET: 3a9b4b6a7bebe86ff42c548b568052a3
