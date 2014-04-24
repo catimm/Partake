@@ -1,4 +1,5 @@
 Web::Application.configure do
+  OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
