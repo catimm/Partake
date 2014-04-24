@@ -38,6 +38,7 @@ gem "koala", "~> 1.8.0rc1"
 gem "omnicontacts"
 gem 'squeel'
 gem 'thin'
+gem 'rest-client'
 
 
 # To use ActiveModel has_secure_password

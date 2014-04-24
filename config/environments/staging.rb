@@ -73,6 +73,9 @@ Web::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
+  # Route through a static IP for testing purposes in staging environment
+  ENV["QUOTAGUARDSTATIC_URL"] = 'http://quotaguard1228:5c199f294c70@us-east-1-static.quotaguard.com:9293'
+  
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5

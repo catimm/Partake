@@ -265,6 +265,7 @@ DEPENDENCIES
   pg
   rabl
   rails (= 3.2.13)
+  rest-client
   rspec-rails
   sass-rails (~> 3.2.3)
   squeel
