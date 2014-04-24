@@ -10,3 +10,4 @@ ENV['SSL_CERT_FILE'] = File.expand_path(File.dirname(__FILE__)) + "/lib/assets/c
 
 # set up email
 ActionMailer::Base.delivery_method = :smtp
+config.action_mailer.default_url_options = { :host => 'partake-stage.herokuapp.com' }
